@@ -7,7 +7,7 @@ Yeah, welcome to my GitHub webpage. I'm 15 years old and I make sort-of weird bu
 ##### [Here's my GitHub profile, which you can freely choose to follow or not.](https://github.com/Apfel)
 
 ### My projects
-- **[Bot Against Humanity](https://github.com/Apfel/bot-against-humanity)** - A Discord bot for playing **[Cards Against Humanity](https://cardsagainsthumanity.com/)** on Discord.
+- **[c-cord](https://github.com/Apfel/c-cord)** - A C library for Discord bots.
 - **[driver-psvr](https://github.com/Apfel/driver-psvr)** - A SteamVR driver for the Sony PlayStation VR and Move.
 - **[DSiRC](https://github.com/Apfel/DSiRC)**           - Some simple yet quite broken IRC client I made for the Nitendo DSi.
 - **[gotag](https://github.com/Apfel/gotag)**           - A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, for some sick text interpretation, done by a machine. Quite epic.
@@ -17,8 +17,6 @@ Yeah, welcome to my GitHub webpage. I'm 15 years old and I make sort-of weird bu
 #### If you want to get in touch, contact me on **[Twitter](https://twitter.com/YaBoiApfel/)**.
 
 <br><br><br><br><br><br><br><br><br><br>
-
-Here's a quick little **uwu** for you all who've been scrolling far enough.
 
 In addition to that, here's a small demo of a WebAssembly module, written in Go, running on GitHub's Pages platform. <br>
 It shows the current time ~~most likely in CEST~~.
