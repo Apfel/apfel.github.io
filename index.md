@@ -16,7 +16,5 @@ Yeah, welcome to my GitHub webpage. I'm 15 years old and I make sort-of weird bu
 
 #### If you want to get in touch, contact me on **[Twitter](https://twitter.com/YaBoiApfel/)**.
 
-<br><br><br><br><br><br><br><br><br><br>
-
 In addition to that, here's a small demo of a WebAssembly module, written in Go, running on GitHub's Pages platform. <br>
 It shows the current time ~~most likely in CEST~~.
