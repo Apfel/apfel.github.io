@@ -2,13 +2,12 @@
 Title: This is actually Apfel's website.
 Permalink: /
 ---
-Yeah, welcome to my GitHub webpage. I'm 15 years old and I make sort-of weird but `exciting` software for others to enjoy. What I develop on is a potato with a high-powered accelerator that AMD calls Ryzen, but the platform the software itself ends up being on changes from time to time. I sincerely hope you'll enjoy the software I make.
+Yeah, welcome to my GitHub webpage. I'm 15 years old and I make sort-of weird but `exciting` software for others to enjoy. I develop all sorts of stuff that interests me at the moment, examples being console homebrew, VR stuff, game development and other stuff like small libraries for various languages.
 
-##### [Here's my GitHub profile, which you can freely choose to follow or not.](https://github.com/Apfel)
+##### Here's my [GitHub profile](https://github.com/Apfel), which you can freely choose to follow or not.
 
 ### My projects
 - **[c-cord](https://github.com/Apfel/c-cord)** - A C library for Discord bots.
-- **[driver-psvr](https://github.com/Apfel/driver-psvr)** - A SteamVR driver for the Sony PlayStation VR and Move.
 - **[DSiRC](https://github.com/Apfel/DSiRC)**           - Some simple yet quite broken IRC client I made for the Nitendo DSi.
 - **[gotag](https://github.com/Apfel/gotag)**           - A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, for some sick text interpretation, done by a machine. Quite epic.
 - **[openhmd-go](https://github.com/Apfel/openhmd-go)** - **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API bindings for Go, for all your gopher-irc Virtual Reality needs.
