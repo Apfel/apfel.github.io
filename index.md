@@ -10,9 +10,14 @@ I'm a weird 15 year old that, because he's bad at scheduling anything, got aroun
 - **[DSiRC](https://github.com/Apfel/DSiRC)**           - Some simple yet quite broken IRC client I made for the Nitendo DSi.
 - **[gotag](https://github.com/Apfel/gotag)**           - A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, for some text interpretation, done by a machine.
 - **[Nutty Nook](https://github.com/Apfel/Nutty-Nook)** - The official Discord bot for The Nook Network.
-- **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** - Discord Rich Presence for iTunes.
+- **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** - **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.
 - **[openhmd-go](https://github.com/Apfel/openhmd-go)** - **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API bindings for Go, for all your gopher-ic Virtual Reality needs.
 - **[xboxload](https://github.com/Apfel/xboxload)** - A wiiload clone for the Xbox, allowing easier testing of homebrew.
+
+## Other projects
+These are projects that I don't own, but where I've made major changes to.
+- **[MikeModder/anpan](https://github.com/MikeModder)** - A command handler for [discordgo](https://github.com/bwmarrin/discordgo)**.
+- **[TheMrIron2/Project-Lylat](https://github.com/TheMrIron2/Project-Lylat)** - A Star Fox-like 3D On-Rails Shooter, made in **[Unreal](https://unrealengine.com)**.
 
 #### If you want to get in touch, contact me on **[Twitter](https://twitter.com/YaBoiApfel/)**, I guess.
 
