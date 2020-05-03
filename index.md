@@ -19,7 +19,10 @@ These are projects that I don't own, but where I've made major changes to.
 - **[MikeModder/anpan](https://github.com/MikeModder)** - A command handler for [discordgo](https://github.com/bwmarrin/discordgo)**.
 - **[TheMrIron2/Project-Lylat](https://github.com/TheMrIron2/Project-Lylat)** - A Star Fox-like 3D On-Rails Shooter, made in **[Unreal](https://unrealengine.com)**.
 
-#### If you want to get in touch, contact me on **[Twitter](https://twitter.com/YaBoiApfel/)**, I guess.
+### Other stuff
+- **[reddit](https://reddit.com/u/realApfel)**
+- **[Twitter](https://twitter.com/YaBoiApfel/)**
+- **[Twitch](https://twitch.tv/indeeditsapfel)**
 
-In addition to that, here's a small demo of a WebAssembly module, written in Go. <br>
+In addition to that, here's a smol WebAssembly module, written in Go. <br>
 It shows the current time, assuming your current platform supports WebAssembly.
