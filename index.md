@@ -2,7 +2,8 @@
 Title: This is actually Apfel's website.
 Permalink: /
 ---
-I'm a weird 15 year old that, because he's bad at scheduling anything, got around to learning tons of things regarding programming.
+Yeah, I make software, I presume. <br>
+Have fun checking them out.
 
 ##### [My GitHub profile](https://github.com/Apfel)
 
