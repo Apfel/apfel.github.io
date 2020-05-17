@@ -12,7 +12,8 @@ I'm a weird 15 year old that, because he's bad at scheduling anything, got aroun
 - **[Nutty Nook](https://github.com/Apfel/Nutty-Nook)** - The official Discord bot for The Nook Network.
 - **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** - **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.
 - **[openhmd-go](https://github.com/Apfel/openhmd-go)** - **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API bindings for Go, for all your gopher-ic Virtual Reality needs.
-- **[xboxload](https://github.com/Apfel/xboxload)** - A wiiload clone for the Xbox, allowing easier testing of homebrew.
+- **[webcord](https://github.com/Apfel/webcord)** - An application that pushes your internet presence onto your Discord profile.
+- **[xboxload](https://github.com/Apfel/xboxload)** - A wiiload clone for the Xbox, allowing easier testing of homebrew. Has yet to be fixed, though, lwIP makes my day worse, it seems.
 
 ## Other projects
 These are projects that I don't own, but where I've made major changes to.
