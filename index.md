@@ -20,6 +20,7 @@ Have fun checking them out.
 These are projects that I don't own, but where I've made major changes to.
 - **[MikeModder/anpan](https://github.com/MikeModder)** - A command handler for **[discordgo](https://github.com/bwmarrin/discordgo)**.
 - **[TheMrIron2/Project-Lylat](https://github.com/TheMrIron2/Project-Lylat)** - A Star Fox-like 3D On-Rails Shooter, made in **[Unreal](https://unrealengine.com)**.
+- **[Zayne64/Blu-Ray](https://github.com/Zayne64/Blu-Ray)** - A general-purpose Discord bot.
 
 ### Other stuff
 - **[reddit](https://reddit.com/u/realApfel)**
