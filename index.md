@@ -1,19 +1,20 @@
 ---
-Title: This is actually Apfel's website.
+Title: Apfel's Website
 Permalink: /
 ---
-Yeah, I make software, I presume. <br>
-Have fun checking them out.
+Hey, I'm Marko, probably better known by the username Apfel, and I make software, sometimes. <br>
+As long as it's a fun challenge - I'm up for it! <br>
+My projects should give you a rough idea of what I've tried so far. <br>
+Have fun checking my projects out.
 
 ##### [My GitHub profile](https://github.com/Apfel)
 
 ### Projects
-- **[DSiRC](https://github.com/Apfel/DSiRC)**           - A simple yet quite broken IRC client I made for the Nitendo DSi.
-- **[gotag](https://github.com/Apfel/gotag)**           - A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, for some text interpretation, done by a machine.
+- **[DSiRC](https://github.com/Apfel/DSiRC)**           - A simple yet quite broken IRC client made for the Nitendo DS and DSi.
+- **[gotag](https://github.com/Apfel/gotag)**           - A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, a library for machine-based text interpretation.
 - **[Nutty Nook](https://github.com/Apfel/Nutty-Nook)** - The official Discord bot for The Nook Network.
 - **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** - **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.
-- **[openhmd-go](https://github.com/Apfel/openhmd-go)** - **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API bindings for Go, for all your gopher-ic Virtual Reality needs.
-
+- **[openhmd-go](https://github.com/Apfel/openhmd-go)** - An **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API wrapper for Go.
 ## Other projects
 These are projects that I don't own, but where I've made major changes to.
 - **[MikeModder/anpan](https://github.com/MikeModder)** - A command handler for **[discordgo](https://github.com/bwmarrin/discordgo)**.
@@ -26,4 +27,4 @@ These are projects that I don't own, but where I've made major changes to.
 - **[Twitch](https://twitch.tv/indeeditsapfel)**
 
 In addition to that, here's a smol WebAssembly module, written in Go. <br>
-It shows the current time, assuming your current platform supports WebAssembly.
+It shows the current time and date, assuming your current platform supports WebAssembly.
