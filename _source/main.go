@@ -12,7 +12,7 @@ func main() {
 		if len(val) == 1 {
 			val = "0" + val
 		}
-	
+
 		return val
 	}
 
@@ -26,14 +26,21 @@ func main() {
 			var suffix string
 			switch t.Day() {
 			case 1:
+			case 21:
+			case 31:
 				suffix = "st"
 				break
+
 			case 2:
+			case 22:
 				suffix = "nd"
 				break
+
 			case 3:
+			case 23:
 				suffix = "rd"
 				break
+
 			default:
 				suffix = "th"
 			}
