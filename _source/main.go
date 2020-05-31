@@ -23,7 +23,8 @@ func main() {
 	for {
 		select {
 		case t := <-ticker.C:
-			var suffix string
+			suffix := "th"
+
 			switch t.Day() {
 			case 1:
 			case 21:
@@ -40,12 +41,10 @@ func main() {
 			case 23:
 				suffix = "rd"
 				break
-
-			default:
-				suffix = "th"
 			}
 
-			body.Set("innerHTML", fmt.Sprintf("Current time is %s:%s:%s, at the %d%s of %s, %d.\n", toString(t.Hour()), toString(t.Minute()), toString(t.Second()), t.Day(), suffix, t.Month().String(), t.Year()))
+			zone, _ := t.Zone()
+			body.Set("innerHTML", fmt.Sprintf("Current time is %s:%s:%s, at the %d%s of %s, %d. Your timezone is %s.", toString(t.Hour()), toString(t.Minute()), toString(t.Second()), t.Day(), suffix, t.Month().String(), t.Year(), zone))
 		}
 	}
 }
