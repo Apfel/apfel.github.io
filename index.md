@@ -15,7 +15,8 @@ Have fun checking my projects out.
 - **[Nutty Nook](https://github.com/Apfel/Nutty-Nook)** - The official Discord bot for The Nook Network.
 - **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** - **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.
 - **[openhmd-go](https://github.com/Apfel/openhmd-go)** - An **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API wrapper for Go.
-## Other projects
+
+### Other projects
 These are projects that I don't own, but where I've made major changes to.
 - **[MikeModder/anpan](https://github.com/MikeModder)** - A command handler for **[discordgo](https://github.com/bwmarrin/discordgo)**.
 - **[TheMrIron2/Project-Lylat](https://github.com/TheMrIron2/Project-Lylat)** - A Star Fox-like 3D On-Rails Shooter, made in **[Unreal](https://unrealengine.com)**.
