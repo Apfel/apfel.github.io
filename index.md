@@ -10,12 +10,12 @@ Have fun checking my projects out.
 ##### [My GitHub profile](https://github.com/Apfel)
 
 ### Projects
-| Project                                                           | Description                                                                                                     |
-| ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **[DSiRC](https://github.com/Apfel/DSiRC)**                       | A simple yet quite broken IRC client made for the Nitendo DS and DSi.                                           |
-| **[gotag](https://github.com/Apfel/gotag)**                       | A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, a library for machine-based text interpretation. |
-| **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** | **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.                 |
-| **[openhmd-go](https://github.com/Apfel/openhmd-go)**             | An **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API wrapper for Go.                                        |
+| Project                                                           | Description                                                                                                     |  
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |  
+| **[DSiRC](https://github.com/Apfel/DSiRC)**                       | A simple yet quite broken IRC client made for the Nitendo DS and DSi.                                           |  
+| **[gotag](https://github.com/Apfel/gotag)**                       | A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, a library for machine-based text interpretation. |  
+| **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** | **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.                 |  
+| **[openhmd-go](https://github.com/Apfel/openhmd-go)**             | An **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API wrapper for Go.                                        |  
 | **[valacord](https://github.com/Apfel/valacord)**
 
 ### Archived Projects
