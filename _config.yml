@@ -1,3 +1,4 @@
 theme: jekyll-theme-hacker
 title: Apfel's GitHub webpage
 description: 
+markdown: kramdown
