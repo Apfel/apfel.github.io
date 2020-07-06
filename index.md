@@ -27,9 +27,7 @@ These are projects that I don't own, but where I've made major changes to.
 - **[Zayne64/blu-ray](https://github.com/Zayne64/blu-ray)**                   - A general-purpose Discord bot.
 
 ### Other stuff
-- **[reddit](https://reddit.com/u/realApfel)**
 - **[Twitter](https://twitter.com/YaBoiApfel/)**
-- **[Twitch](https://twitch.tv/indeeditsapfel)**
 
 In addition to that, here's a smol WebAssembly module, written in Go.  
 It shows the current time and date, assuming your current platform supports WebAssembly.
