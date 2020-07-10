@@ -10,7 +10,6 @@ Have fun checking my projects out.
 ##### [My GitHub profile](https://github.com/Apfel)
 
 ### Projects
-- **[clock-pi](https://github.com/Apfel/clock-pi)**                 - A small gadget that converts a Raspberry Pi with a 7" display and the Sense HAT into a clock with a temperature display.
 - **[DSiRC](https://github.com/Apfel/DSiRC)**                       - A simple yet quite broken IRC client made for the Nitendo DS and DSi.
 - **[gotag](https://github.com/Apfel/gotag)**                       - A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, a library for machine-based text interpretation.
 - **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** - **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.
