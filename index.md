@@ -14,6 +14,7 @@ Have fun checking my projects out.
 - **[gotag](https://github.com/Apfel/gotag)**                       - A **[JagTag](https://github.com/jagrosh/JagTag)** port for Go, a library for machine-based text interpretation.
 - **[Ongaku for Windows](https://github.com/Apfel/Ongaku-Windows)** - **[Discord](https://discordapp.com)** Rich Presence for **[iTunes](https://apple.com/itunes)**.
 - **[openhmd-go](https://github.com/Apfel/openhmd-go)**             - An **[OpenHMD](https://github.com/OpenHMD/OpenHMD)** API wrapper for Go.
+- **[valacord](https://github.com/Apfel/valacord)**                 - A Discord bot library for **[Vala](https://wiki.gnome.org/Projects/Vala)**.
 
 ### Archived Projects
 These projects were archived due to various reasons.
