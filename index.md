@@ -23,6 +23,7 @@ These are projects that I don't own, but where I've made major changes to.
 - **[Zayne64/blu-ray](https://github.com/Zayne64/blu-ray)**                   - A general-purpose Discord bot.
 
 ### Other stuff
+- **[reddit](https://www.reddit.com/user/IndeedItsApfel)**
 - **[Twitter](https://twitter.com/YaBoiApfel/)**
 
 In addition to that, here's a smol WebAssembly module, written in Go.  
