@@ -12,9 +12,14 @@ void main() async {
     theme: ThemeData(
       brightness: Brightness.dark,
       primaryColor: Colors.orange,
+      accentColor: Colors.orangeAccent,
+      cardTheme: CardTheme(
+        elevation: 8
+      ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        elevation: 10.0,
-        selectedItemColor: Colors.orange
+        elevation: 48.0,
+        selectedItemColor: Colors.orange,
+        backgroundColor: Color(0xFF1F1F1F)
       ),
       fontFamily: "NotoSans",
       visualDensity: VisualDensity.adaptivePlatformDensity
@@ -34,7 +39,6 @@ class MainPageURLs {
   static const String twitter = "https://twitter.com/YaBoiApfel/";
 }
 
-
 class MainPageState extends State<MainPage> {
   int selectedPage = 0;
 
@@ -52,6 +56,7 @@ class MainPageState extends State<MainPage> {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
       title: Text("Apfel's website"),
+      elevation: 24,
       actions: [
         IconButton(
           icon: Image(
@@ -77,7 +82,7 @@ class MainPageState extends State<MainPage> {
           tooltip: "Twitter",
           onPressed: () => Utilities.showURLDialog(context, MainPageURLs.twitter, "Twitter")
         )
-      ],
+      ]
     ),
     body: Center(
       child: widgets.elementAt(selectedPage)
@@ -85,12 +90,18 @@ class MainPageState extends State<MainPage> {
     bottomNavigationBar: BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle),
+          icon: Icon(
+            Icons.account_circle,
+            semanticLabel: "About"
+          ),
           title: Text("About")
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.chrome_reader_mode_rounded),
-          title: Text("Projects")
+          icon: Icon(
+            Icons.article,
+            semanticLabel: "Projects"
+          ),
+          title: Text("Projects"),
         )
       ],
       currentIndex: selectedPage,
