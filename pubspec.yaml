@@ -41,7 +41,8 @@ flutter:
     - assets/github.png
     - assets/reddit.png
     - assets/twitter.png
+    - assets/youtube.png
   fonts:
     - family: NotoSans
       fonts:
-        - asset: assets/NotoSans-Regular.ttf
+        - asset: assets/notosans.ttf

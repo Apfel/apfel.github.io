@@ -22,6 +22,8 @@ import "package:stuff/about.dart";
 import "package:stuff/projects.dart";
 import "package:stuff/utilities.dart";
 
+import 'utilities.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -56,6 +58,7 @@ class MainPageURLs {
   static const String github  = "https://github.com/Apfel";
   static const String reddit  = "https://www.reddit.com/user/IndeedItsApfel";
   static const String twitter = "https://twitter.com/YaBoiApfel/";
+  static const String youtube = "https://www.youtube.com/channel/UCERSSPG9CFb_hAP6VDmM-eQ";
 }
 
 class MainPageState extends State<MainPage> {
@@ -100,6 +103,14 @@ class MainPageState extends State<MainPage> {
           ),
           tooltip: "Twitter",
           onPressed: () => Utilities.showURLDialog(context, MainPageURLs.twitter, "Twitter")
+        ),
+        IconButton(
+          icon: Image(
+            image: AssetImage("assets/youtube.png"),
+            semanticLabel: "YouTube",
+          ),
+          tooltip: "YouTube",
+          onPressed: () => Utilities.showURLDialog(context, MainPageURLs.youtube, "YouTube"),
         )
       ]
     ),
