@@ -1,5 +1,5 @@
 // Copyright (c) 2020 Apfel
-//
+//  
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -18,50 +18,25 @@
 // SOFTWARE.
 
 import "package:flutter/material.dart";
-import "package:stuff/github.dart";
-import "package:stuff/utilities.dart";
+import "github.dart";
+import "utilities.dart";
 
-class Project extends StatelessWidget {
+class _Project extends StatelessWidget {
   final GitHubRepository project;
 
-  Project(this.project);
+  _Project(this.project);
 
   @override
   Widget build(BuildContext context) => Card(
-    margin: EdgeInsets.all(32),
-    child: InkWell(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Expanded(
-            flex: 60,
-            child: Container(
-              padding: EdgeInsets.all(8),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(project.name, textScaleFactor: 2, style: Theme.of(context).textTheme.caption),
-                  Expanded(flex: 3, child: Container()),
-                  Text(project.description, textScaleFactor: 1.2, style: Theme.of(context).textTheme.caption),
-                  Expanded(flex: 3, child: Container()),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(" " + project.language, textScaleFactor: 0.95, style: Theme.of(context).textTheme.subtitle1)
-                    ]
-                  )
-                ]
-              )
-            )
-          )
-        ]
+    child: ListTile(
+      title: Text(project.name, style: Theme.of(context).textTheme.subtitle1),
+      subtitle: Text(project.description),
+      trailing: Text(
+        project.language, 
+        textAlign: TextAlign.right,
+        style: Theme.of(context).textTheme.subtitle2
       ),
-      onTap: () => Utilities.showURLDialog(context, project.url, project.name),
+      onTap: () => Utilities.showURLDialog(context, project.url, "GitHub > " + project.name),
     )
   );
 }
@@ -73,23 +48,24 @@ class ProjectsTab extends StatelessWidget {
     child: FutureBuilder(
       future: fetchRepositoriesForUser("Apfel"),
       builder: (BuildContext context, AsyncSnapshot<List<GitHubRepository>> snapshot) {
-        if (!snapshot.hasData) return Center(child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(semanticsLabel: "Project loading indicator"),
-            Text("Loading projects...")
-          ]
-        ));
+        if (!snapshot.hasData) return Container(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(semanticsLabel: "Project loading indicator"),
+              Text("Loading projects...")
+            ]
+          )
+        );
 
-        return GridView.count(
-          padding: EdgeInsets.all(16),
-          crossAxisCount: 3,
-          childAspectRatio: MediaQuery.of(context).size.width / (MediaQuery.of(context).size.height / 1.3),
+        return ListView(
+          padding: EdgeInsets.all(8),
           children: List.generate(
             snapshot.data.length,
-            (index) => Project(snapshot.data[index])
+            (index) => _Project(snapshot.data[index])
           )
         );
       }

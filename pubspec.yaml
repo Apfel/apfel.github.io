@@ -17,7 +17,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-name: stuff
+name: apfel_github_io
 description: Apfel's website stuff
 publish_to: 'none'
 version: 1.0.0+1

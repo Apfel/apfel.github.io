@@ -22,22 +22,34 @@ import 'package:flutter/material.dart';
 
 class AboutTab extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => SingleChildScrollView(
-    child: Center(
-      child: SizedBox(
-        width: 680.0,
-        height: 215.0,
-        child: AutoSizeText("""Hey, I'm Marko, probably better known by the username Apfel, and I develop stuff.
-As long as it's a fun challenge - I'm up for it!  
-My projects should give you a rough idea of what I've tried so far.  
-With all that said - you can use the bar at the bottom to check out more stuff.
+  Widget build(BuildContext context) => Container(
+    padding: EdgeInsets.all(8),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        AutoSizeText("""Hello! My name is Marko.
+You may instead know me as Apfel.
 
-Have fun!""",
-          style: TextStyle(fontSize: 24),
-          minFontSize: 16,
-          maxFontSize: 80,
+I'm a software developer.
+
+I try to tackle every challenge I come across, though I prefer desktop-oriented application development.
+
+You may want to check the projects I've worked on out - in that case, switch over to the Projects tab.""",
+          style: TextStyle(fontSize: 20),
+          textAlign: TextAlign.center
         )
-      )
+      ]
     )
   );
 }
+/* Container(
+    child: Text(
+"""Hey, I'm Marko, probably better known by the username Apfel, and I develop stuff.
+As long as it's a fun challenge - I'm up for it!  
+My projects should give you a rough idea of what I've tried so far.  
+With all that said - you can use the bar at the bottom to check out more stuff.
+Have fun!"""
+    )
+  );
+}
+*/

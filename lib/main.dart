@@ -18,15 +18,11 @@
 // SOFTWARE.
 
 import "package:flutter/material.dart";
-import "package:stuff/about.dart";
-import "package:stuff/projects.dart";
-import "package:stuff/utilities.dart";
+import "about.dart";
+import "projects.dart";
+import "utilities.dart";
 
-import 'utilities.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
+void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "Apfel's website",
@@ -34,9 +30,7 @@ void main() async {
       brightness: Brightness.dark,
       primaryColor: Colors.orange,
       accentColor: Colors.orangeAccent,
-      cardTheme: CardTheme(
-        elevation: 8
-      ),
+      cardTheme: CardTheme(elevation: 8),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 48.0,
         selectedItemColor: Colors.orange,
@@ -51,17 +45,35 @@ void main() async {
 
 class MainPage extends StatefulWidget {
   @override
-  MainPageState createState() => MainPageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class MainPageURLs {
+class _MainPageURLs {
   static const String github  = "https://github.com/Apfel";
   static const String reddit  = "https://www.reddit.com/user/IndeedItsApfel";
   static const String twitter = "https://twitter.com/YaBoiApfel/";
   static const String youtube = "https://www.youtube.com/channel/UCERSSPG9CFb_hAP6VDmM-eQ";
 }
 
-class MainPageState extends State<MainPage> {
+class _MainPageIconButton extends StatelessWidget {
+  final ImageProvider<Object> image;
+  final String                tooltip;
+  final String                url;
+
+  _MainPageIconButton(this.image, this.tooltip, this.url);
+
+  @override
+  Widget build(BuildContext context) => IconButton(
+    icon: Image(
+      image: image,
+      semanticLabel: tooltip
+    ),
+    tooltip: tooltip,
+    onPressed: () => Utilities.showURLDialog(context, url, tooltip)
+  );
+}
+
+class _MainPageState extends State<MainPage> {
   int selectedPage = 0;
 
   static List<Widget> widgets = [
@@ -70,72 +82,31 @@ class MainPageState extends State<MainPage> {
   ];
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
       title: Text("Apfel's website"),
       elevation: 24,
       actions: [
-        IconButton(
-          icon: Image(
-            image: AssetImage("assets/github.png"),
-            semanticLabel: "GitHub"
-          ),
-          tooltip: "GitHub",
-          onPressed: () => Utilities.showURLDialog(context, MainPageURLs.github, "GitHub")
-        ),
-        IconButton(
-          icon: Image(
-            image: AssetImage("assets/reddit.png"),
-            semanticLabel: "reddit"
-          ),
-          tooltip: "reddit",
-          onPressed: () => Utilities.showURLDialog(context, MainPageURLs.reddit, "reddit")
-        ),
-        IconButton(
-          icon: Image(
-            image: AssetImage("assets/twitter.png"),
-            semanticLabel: "Twitter",
-          ),
-          tooltip: "Twitter",
-          onPressed: () => Utilities.showURLDialog(context, MainPageURLs.twitter, "Twitter")
-        ),
-        IconButton(
-          icon: Image(
-            image: AssetImage("assets/youtube.png"),
-            semanticLabel: "YouTube",
-          ),
-          tooltip: "YouTube",
-          onPressed: () => Utilities.showURLDialog(context, MainPageURLs.youtube, "YouTube"),
-        )
+        _MainPageIconButton(AssetImage("assets/github.png"), "GitHub", _MainPageURLs.github),
+        _MainPageIconButton(AssetImage("assets/reddit.png"), "reddit", _MainPageURLs.reddit),
+        _MainPageIconButton(AssetImage("assets/twitter.png"), "Twitter", _MainPageURLs.twitter),
+        _MainPageIconButton(AssetImage("assets/youtube.png"), "YouTube", _MainPageURLs.youtube)
       ]
     ),
-    body: Center(
-      child: widgets.elementAt(selectedPage)
-    ),
+    body: Center(child: widgets.elementAt(selectedPage)),
     bottomNavigationBar: BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.account_circle,
-            semanticLabel: "About"
-          ),
-          title: Text("About")
+          icon: Icon(Icons.account_circle, semanticLabel: "About"),
+          label: "About"
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.article,
-            semanticLabel: "Projects"
-          ),
-          title: Text("Projects"),
+          icon: Icon(Icons.article, semanticLabel: "Projects"),
+          label: "Projects"
         )
       ],
       currentIndex: selectedPage,
-      onTap: (index) => setState(() => selectedPage = index),
+      onTap: (index) => setState(() => selectedPage = index)
     )
   );
 }
