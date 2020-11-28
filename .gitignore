@@ -2,3 +2,7 @@
 build
 
 .packages
+
+tools/linguist-converter/languages.json
+tools/linguist-converter/linguist-converter
+tools/linguist-converter/linguist-converter.exe

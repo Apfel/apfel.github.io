@@ -17,8 +17,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import 'package:apfel_github_io/base.dart';
 import "package:flutter/material.dart";
+import "base.dart";
 import "github.dart";
 import "utilities.dart";
 
@@ -33,8 +33,7 @@ class _Project extends StatelessWidget {
       title: Text(project.name, style: Theme.of(context).textTheme.subtitle1),
       subtitle: Text(project.description),
       trailing: Text(
-        project.language, 
-        textAlign: TextAlign.right,
+        project.language,
         style: Theme.of(context).textTheme.subtitle2
       ),
       onTap: () => Utilities.showURLDialog(context, project.url, "GitHub > " + project.name),
@@ -53,15 +52,10 @@ class ProjectsTab extends NamedWidget{
       future: fetchRepositoriesForUser("Apfel"),
       builder: (BuildContext context, AsyncSnapshot<List<GitHubRepository>> snapshot) {
         if (!snapshot.hasData) return Container(
-          padding: EdgeInsets.all(15),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircularProgressIndicator(semanticsLabel: "Project loading indicator"),
-              Text("Loading projects...")
-            ]
+          padding: EdgeInsets.all(16),
+          child: Align(
+            alignment: FractionalOffset.bottomRight,
+            child: CircularProgressIndicator(semanticsLabel: "Project loading indicator")
           )
         );
 

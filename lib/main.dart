@@ -19,14 +19,14 @@
 
 import "package:flutter/material.dart";
 import "about.dart";
-import 'base.dart';
+import "base.dart";
 import "projects.dart";
 import "utilities.dart";
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: "Apfel's website",
+    title: "Apfel's Website",
     theme: ThemeData(
       brightness: Brightness.dark,
       primaryColor: Colors.orange,
@@ -101,7 +101,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
       automaticallyImplyLeading: false,
-      title: Text("Apfel's website"),
+      title: Text("Apfel's Website"),
       elevation: 24,
       actions: [
         _MainPageIconButton(AssetImage("assets/github.png"), "GitHub", _MainPageURLs.github),
