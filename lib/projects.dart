@@ -17,6 +17,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import 'package:apfel_github_io/base.dart';
 import "package:flutter/material.dart";
 import "github.dart";
 import "utilities.dart";
@@ -41,7 +42,10 @@ class _Project extends StatelessWidget {
   );
 }
 
-class ProjectsTab extends StatelessWidget {
+class ProjectsTab extends NamedWidget{
+  @override
+  String getName() => "projects";
+
   @override
   Widget build(BuildContext context) => DefaultTextStyle(
     style: Theme.of(context).textTheme.bodyText2,
@@ -61,11 +65,13 @@ class ProjectsTab extends StatelessWidget {
           )
         );
 
-        return ListView(
-          padding: EdgeInsets.all(8),
-          children: List.generate(
-            snapshot.data.length,
-            (index) => _Project(snapshot.data[index])
+        return Scrollbar(
+          child: ListView(
+            padding: EdgeInsets.all(8),
+            children: List.generate(
+              snapshot.data.length,
+              (index) => _Project(snapshot.data[index])
+            )
           )
         );
       }

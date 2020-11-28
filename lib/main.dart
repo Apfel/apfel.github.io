@@ -19,6 +19,7 @@
 
 import "package:flutter/material.dart";
 import "about.dart";
+import 'base.dart';
 import "projects.dart";
 import "utilities.dart";
 
@@ -30,22 +31,36 @@ void main() {
       brightness: Brightness.dark,
       primaryColor: Colors.orange,
       accentColor: Colors.orangeAccent,
+      highlightColor: Colors.orange,
       cardTheme: CardTheme(elevation: 8),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        elevation: 48.0,
-        selectedItemColor: Colors.orange,
-        backgroundColor: Color(0xFF1F1F1F)
+      navigationRailTheme: NavigationRailThemeData(
+        selectedIconTheme: IconThemeData(color: Colors.orange),
+        selectedLabelTextStyle: TextStyle(color: Colors.orange),
+        elevation: 12
       ),
       fontFamily: "NotoSans",
       visualDensity: VisualDensity.adaptivePlatformDensity
     ),
-    home: MainPage()
+    routes: {
+      "/": (context) => MainPage(),
+
+      "/about": (context) => MainPage(),
+      "/about/": (context) => MainPage(),
+
+      "/projects": (context) => MainPage(startPage: 1),
+      "/projects/": (context) => MainPage(startPage: 1),
+    },
+    initialRoute: "/",
   ));
 }
 
 class MainPage extends StatefulWidget {
+  final int startPage;
+
+  MainPage({this.startPage = 0});
+
   @override
-  _MainPageState createState() => _MainPageState();
+  _MainPageState createState() => _MainPageState(startPage);
 }
 
 class _MainPageURLs {
@@ -74,16 +89,18 @@ class _MainPageIconButton extends StatelessWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int selectedPage = 0;
+  int _selectedPage = 0;
 
-  static List<Widget> widgets = [
+  _MainPageState(this._selectedPage);
+
+  static List<NamedWidget> _widgets = [
     AboutTab(),
     ProjectsTab()
   ];
 
-  @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
+      automaticallyImplyLeading: false,
       title: Text("Apfel's website"),
       elevation: 24,
       actions: [
@@ -93,20 +110,36 @@ class _MainPageState extends State<MainPage> {
         _MainPageIconButton(AssetImage("assets/youtube.png"), "YouTube", _MainPageURLs.youtube)
       ]
     ),
-    body: Center(child: widgets.elementAt(selectedPage)),
-    bottomNavigationBar: BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle, semanticLabel: "About"),
-          label: "About"
+    body: Row(
+      children: <Widget>[
+        NavigationRail(
+          selectedIndex: _selectedPage,
+          onDestinationSelected: (int index) {
+            Navigator.push(context,
+              PageRouteBuilder(
+                pageBuilder: (context, animation1, animation2) => MainPage(startPage: index),
+                transitionDuration: Duration(seconds: 0),
+                settings: RouteSettings(name: "/" + _widgets.elementAt(index).getName())
+              )
+            );
+          },
+          labelType: NavigationRailLabelType.selected,
+          destinations: [
+            NavigationRailDestination(
+              icon: Icon(Icons.account_circle),
+              selectedIcon: Icon(Icons.account_circle),
+              label: Text("About me")
+            ),
+            NavigationRailDestination(
+              icon: Icon(Icons.article),
+              selectedIcon: Icon(Icons.article),
+              label: Text("Projects")
+            )
+          ]
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.article, semanticLabel: "Projects"),
-          label: "Projects"
-        )
-      ],
-      currentIndex: selectedPage,
-      onTap: (index) => setState(() => selectedPage = index)
+        VerticalDivider(thickness: 1, width: 1),
+        Expanded(child: Center(child: _widgets.elementAt(_selectedPage)))
+      ]
     )
   );
 }

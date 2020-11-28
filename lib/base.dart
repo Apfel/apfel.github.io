@@ -17,32 +17,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import "package:auto_size_text/auto_size_text.dart";
 import "package:flutter/material.dart";
-import "base.dart";
 
-class AboutTab extends NamedWidget {
-  @override
-  String getName() => "about";
-
-  @override
-  Widget build(BuildContext context) => Container(
-    padding: EdgeInsets.all(8),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        AutoSizeText("""Hello! My name is Marko.
-You may instead know me as Apfel.
-
-I'm a software developer.
-
-I try to tackle every challenge I come across, though I prefer desktop-oriented application development.
-
-You may want to check the projects I've worked on out - in that case, switch over to the Projects tab.""",
-          style: TextStyle(fontSize: 20),
-          textAlign: TextAlign.center
-        )
-      ]
-    )
-  );
+abstract class NamedWidget extends StatelessWidget {
+  String getName();
 }

@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#ff8900",
     "theme_color": "#ff8900",
-    "description": "My website; this time, it's made with Flutter.",
+    "description": "Apfel's Website",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
