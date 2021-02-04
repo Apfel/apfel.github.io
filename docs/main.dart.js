@@ -30801,7 +30801,7 @@ $C:"$0",
 $R:0,
 $S:0}
 F.EW.prototype={
-I:function(a,b){var s=null,r=L.h6("Apfel's Website",s,s,s,s,s,s,s,s,s,s,s),q=t.fQ,p=H.d([new F.lj(new L.iH("assets/github.png"),"GitHub","https://github.com/Apfel",s),new F.lj(new L.iH("assets/reddit.png"),"reddit","https://www.reddit.com/user/IndeedItsApfel",s),new F.lj(new L.iH("assets/twitter.png"),"Twitter","https://twitter.com/YaBoiApfel/",s),new F.lj(new L.iH("assets/youtube.png"),"YouTube","https://www.youtube.com/channel/UCERSSPG9CFb_hAP6VDmM-eQ",s)],q),o=this.d,n=L.NH(C.pp),m=L.NH(C.pp),l=L.h6("About me",s,s,s,s,s,s,s,s,s,s,s),k=L.NH(C.pq),j=L.NH(C.pq),i=L.h6("Projects",s,s,s,s,s,s,s,s,s,s,s)
+I:function(a,b){var s=null,r=L.h6("Apfel's Website",s,s,s,s,s,s,s,s,s,s,s),q=t.fQ,p=H.d([new F.lj(new L.iH("assets/github.png"),"GitHub","https://github.com/Apfel",s),new F.lj(new L.iH("assets/reddit.png"),"reddit","https://www.reddit.com/user/IndeedItsApfel",s),new F.lj(new L.iH("assets/twitter.png"),"Twitter","https://twitter.com/IndeedItsApfel/",s),new F.lj(new L.iH("assets/youtube.png"),"YouTube","https://www.youtube.com/channel/UCERSSPG9CFb_hAP6VDmM-eQ",s)],q),o=this.d,n=L.NH(C.pp),m=L.NH(C.pp),l=L.h6("About me",s,s,s,s,s,s,s,s,s,s,s),k=L.NH(C.pq),j=L.NH(C.pq),i=L.h6("Projects",s,s,s,s,s,s,s,s,s,s,s)
 return new M.rW(new E.oU(!1,r,p,24,new P.V(1/0,56),s),T.a2t(H.d([new E.r0(H.d([new E.r1(n,m,l),new E.r1(k,j,i)],t.r9),o,new F.Yb(b),C.qh,s),new Z.Cy(1,1,s),T.a50(T.pd($.a3T()[o],s,s))],q),C.bh,C.d4),s)}}
 F.Yb.prototype={
 $1:function(a){var s=null,r=P.ce(0,0,0),q="/"+$.a3T()[a].xW(),p=H.d([],t.F8),o=$.P,n=t.hR,m=t.th,l=S.Aq(C.eY),k=H.d([],t.tD),j=$.P

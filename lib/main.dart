@@ -66,7 +66,7 @@ class MainPage extends StatefulWidget {
 class _MainPageURLs {
   static const String github  = "https://github.com/Apfel";
   static const String reddit  = "https://www.reddit.com/user/IndeedItsApfel";
-  static const String twitter = "https://twitter.com/YaBoiApfel/";
+  static const String twitter = "https://twitter.com/IndeedItsApfel/";
   static const String youtube = "https://www.youtube.com/channel/UCERSSPG9CFb_hAP6VDmM-eQ";
 }
 

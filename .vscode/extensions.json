@@ -2,7 +2,6 @@
     "recommendations": [
         "dart-code.dart-code",
         "dart-code.flutter",
-        "editorconfig.editorconfig",
-        "streetsidesoftware.code-spell-checker"
+        "editorconfig.editorconfig"
     ]
 }
