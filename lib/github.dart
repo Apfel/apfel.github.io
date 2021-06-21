@@ -24,42 +24,65 @@ import "package:meta/meta.dart";
 
 class GitHubRepository {
   final String name;
+  final String fullName;
   final String url;
   final String description;
   final String language;
+  final bool archived;
+  final bool fork;
+  final GitHubRepository parent;
 
-  GitHubRepository({
-    @required
-    this.name,
+  GitHubRepository(
+      {@required this.name,
+      @required this.fullName,
+      @required this.url,
+      @required this.description,
+      @required this.language,
+      @required this.archived,
+      @required this.fork,
+      @required this.parent});
 
-    @required
-    this.url,
-
-    @required
-    this.description,
-
-    @required
-    this.language
-  });
-
-  factory GitHubRepository.fromJson(Map<String, dynamic> json) => GitHubRepository(
-    name: json["name"] as String,
-    url: json["html_url"] as String,
-    description: json["description"] != null ? json["description"] as String : "No description.",
-    language: json["language"] as String
-  );
+  factory GitHubRepository.fromJson(Map<String, dynamic> json) =>
+      GitHubRepository(
+          name: json["name"] as String,
+          fullName: json["full_name"] as String,
+          url: json["html_url"] as String,
+          description: json["description"] != null
+              ? json["description"] as String
+              : "No description.",
+          language: json["language"] as String,
+          archived: json["archived"] as bool,
+          fork: json["fork"] as bool,
+          parent: json["parent"] != null
+              ? GitHubRepository.fromJson(
+                  json["parent"] as Map<String, dynamic>)
+              : null);
 }
 
 Future<List<GitHubRepository>> fetchRepositoriesForUser(String username) async {
-  http.Response response = await http.get("https://api.github.com/users/" + username + "/repos",
-    headers: {
-      HttpHeaders.acceptHeader: "application/vnd.github.v3+json"
-    }
-  );
-
+  http.Response response = await http.get(
+      Uri.parse("https://api.github.com/users/" + username + "/repos"),
+      headers: {HttpHeaders.acceptHeader: "application/vnd.github.v3+json"});
   if (response.statusCode != HttpStatus.ok) {
     return null;
   }
 
-  return json.decode(response.body).cast<Map<String, dynamic>>().map<GitHubRepository>((json) => GitHubRepository.fromJson(json)).toList();
+  List<GitHubRepository> list = (jsonDecode(response.body) as List)
+      .map((element) => GitHubRepository.fromJson(element))
+      .toList();
+
+  for (int i = 0; i < list.length; i++) {
+    if (!list[i].fork) continue;
+
+    http.Response response = await http.get(
+        Uri.parse("https://api.github.com/repos/" + list[i].fullName),
+        headers: {HttpHeaders.acceptHeader: "application/vnd.github.v3+json"});
+    if (response.statusCode != HttpStatus.ok) {
+      continue;
+    }
+
+    list[i] = GitHubRepository.fromJson(jsonDecode(response.body));
+  }
+
+  return list;
 }

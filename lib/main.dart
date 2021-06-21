@@ -26,29 +26,23 @@ import "utilities.dart";
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: "Apfel's Website",
+    title: "Apfel's website",
     theme: ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: Colors.orange,
-      accentColor: Colors.orangeAccent,
-      highlightColor: Colors.orange,
-      cardTheme: CardTheme(elevation: 8),
-      navigationRailTheme: NavigationRailThemeData(
-        selectedIconTheme: IconThemeData(color: Colors.orange),
-        selectedLabelTextStyle: TextStyle(color: Colors.orange),
-        elevation: 12
-      ),
-      fontFamily: "NotoSans",
-      visualDensity: VisualDensity.adaptivePlatformDensity
-    ),
+        brightness: Brightness.dark,
+        primaryColor: Colors.orange,
+        accentColor: Colors.orangeAccent,
+        highlightColor: Colors.orange,
+        cardTheme: CardTheme(elevation: 8),
+        navigationRailTheme: NavigationRailThemeData(
+            selectedIconTheme: IconThemeData(color: Colors.orange),
+            selectedLabelTextStyle: TextStyle(color: Colors.orange),
+            elevation: 12),
+        fontFamily: "NotoSans",
+        visualDensity: VisualDensity.adaptivePlatformDensity),
     routes: {
-      "/": (context) => MainPage(),
-
+      "/": (context) => MainPage(startPage: 1),
       "/about": (context) => MainPage(),
-      "/about/": (context) => MainPage(),
-
       "/projects": (context) => MainPage(startPage: 1),
-      "/projects/": (context) => MainPage(startPage: 1),
     },
     initialRoute: "/",
   ));
@@ -64,28 +58,26 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageURLs {
-  static const String github  = "https://github.com/Apfel";
-  static const String reddit  = "https://www.reddit.com/user/IndeedItsApfel";
-  static const String twitter = "https://twitter.com/IndeedItsApfel/";
-  static const String youtube = "https://www.youtube.com/channel/UCERSSPG9CFb_hAP6VDmM-eQ";
+  static const String github = "https://github.com/apfel";
+  static const String reddit = "https://www.reddit.com/user/indeeditsapfel";
+  static const String twitter = "https://twitter.com/indeeditsapfel";
+  static const String youtube =
+      "https://www.youtube.com/channel/UCERSSPG9CFb_hAP6VDmM-eQ";
+  static const String email = "mailto:markospublicemail@gmail.com";
 }
 
 class _MainPageIconButton extends StatelessWidget {
   final ImageProvider<Object> image;
-  final String                tooltip;
-  final String                url;
+  final String tooltip;
+  final String url;
 
   _MainPageIconButton(this.image, this.tooltip, this.url);
 
   @override
   Widget build(BuildContext context) => IconButton(
-    icon: Image(
-      image: image,
-      semanticLabel: tooltip
-    ),
-    tooltip: tooltip,
-    onPressed: () => Utilities.showURLDialog(context, url, tooltip)
-  );
+      icon: Image(image: image, semanticLabel: tooltip),
+      tooltip: tooltip,
+      onPressed: () => Utilities.showURLDialog(context, url, tooltip));
 }
 
 class _MainPageState extends State<MainPage> {
@@ -93,53 +85,50 @@ class _MainPageState extends State<MainPage> {
 
   _MainPageState(this._selectedPage);
 
-  static List<NamedWidget> _widgets = [
-    AboutTab(),
-    ProjectsTab()
-  ];
+  static List<NamedWidget> _widgets = [AboutTab(), ProjectsTab()];
 
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(
-      automaticallyImplyLeading: false,
-      title: Text("Apfel's Website"),
-      elevation: 24,
-      actions: [
-        _MainPageIconButton(AssetImage("assets/github.png"), "GitHub", _MainPageURLs.github),
-        _MainPageIconButton(AssetImage("assets/reddit.png"), "reddit", _MainPageURLs.reddit),
-        _MainPageIconButton(AssetImage("assets/twitter.png"), "Twitter", _MainPageURLs.twitter),
-        _MainPageIconButton(AssetImage("assets/youtube.png"), "YouTube", _MainPageURLs.youtube)
-      ]
-    ),
-    body: Row(
-      children: <Widget>[
+      appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text("Apfel's Website"),
+          elevation: 24,
+          actions: [
+            _MainPageIconButton(AssetImage("assets/github.png"), "GitHub",
+                _MainPageURLs.github),
+            _MainPageIconButton(AssetImage("assets/reddit.png"), "reddit",
+                _MainPageURLs.reddit),
+            _MainPageIconButton(AssetImage("assets/twitter.png"), "Twitter",
+                _MainPageURLs.twitter),
+            _MainPageIconButton(AssetImage("assets/youtube.png"), "YouTube",
+                _MainPageURLs.youtube),
+            _MainPageIconButton(
+                AssetImage("assets/gmail.png"), "Email", _MainPageURLs.email),
+          ]),
+      body: Row(children: <Widget>[
         NavigationRail(
-          selectedIndex: _selectedPage,
-          onDestinationSelected: (int index) {
-            Navigator.push(context,
-              PageRouteBuilder(
-                pageBuilder: (context, animation1, animation2) => MainPage(startPage: index),
-                transitionDuration: Duration(seconds: 0),
-                settings: RouteSettings(name: "/" + _widgets.elementAt(index).getName())
-              )
-            );
-          },
-          labelType: NavigationRailLabelType.selected,
-          destinations: [
-            NavigationRailDestination(
-              icon: Icon(Icons.account_circle),
-              selectedIcon: Icon(Icons.account_circle),
-              label: Text("About me")
-            ),
-            NavigationRailDestination(
-              icon: Icon(Icons.article),
-              selectedIcon: Icon(Icons.article),
-              label: Text("Projects")
-            )
-          ]
-        ),
+            selectedIndex: _selectedPage,
+            onDestinationSelected: (int index) {
+              Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) =>
+                          MainPage(startPage: index),
+                      transitionDuration: Duration(seconds: 0),
+                      settings: RouteSettings(
+                          name: "/" + _widgets.elementAt(index).getName())));
+            },
+            labelType: NavigationRailLabelType.selected,
+            destinations: [
+              NavigationRailDestination(
+                  icon: Icon(Icons.account_circle),
+                  selectedIcon: Icon(Icons.account_circle),
+                  label: Text("About me")),
+              NavigationRailDestination(
+                  icon: Icon(Icons.article),
+                  selectedIcon: Icon(Icons.article),
+                  label: Text("Projects"))
+            ]),
         VerticalDivider(thickness: 1, width: 1),
         Expanded(child: Center(child: _widgets.elementAt(_selectedPage)))
-      ]
-    )
-  );
+      ]));
 }

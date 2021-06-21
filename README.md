@@ -20,3 +20,7 @@ flutter build web
 ```
 
 You'll find a usable page setup in `build/web` now.
+
+## Code style
+Because the developers behind flutter seem to have a stick up their ass, you're doomed to live with their stupid code style.  
+I'm sorry for any pain caused.

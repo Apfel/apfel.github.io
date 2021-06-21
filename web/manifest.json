@@ -1,11 +1,11 @@
 {
-    "name": "Apfel's Website",
-    "short_name": "Apfel's Website",
+    "name": "Apfel's website",
+    "short_name": "Apfel's website",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#ff8900",
     "theme_color": "#ff8900",
-    "description": "Apfel's Website",
+    "description": "Apfel's website",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
