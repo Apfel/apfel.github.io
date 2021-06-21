@@ -1,10 +1,9 @@
-// Copyright (c) 2020 Apfel
+// Copyright (c) 2020-2021 Apfel
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software.
+// to use, copy, modify and/or distribute copies of the Software.
 //
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
@@ -43,18 +42,22 @@ class _Project extends StatelessWidget {
                   style: TextStyle(color: Colors.grey, fontSize: 15)),
             ]);
 
-          if (project.fork)
+          if (project.fork && project.parent != null)
             widgets.addAll([
               Spacer(flex: 1),
-              Text(
-                  "forked from " +
-                      (project.parent != null
-                          ? project.parent.fullName
-                          : "<unknown>"),
+              Text("forked from ",
                   style: TextStyle(color: Colors.grey, fontSize: 15)),
+              TextButton(
+                  child: Text(project.parent.fullName,
+                      style: TextStyle(color: Colors.blueGrey, fontSize: 15)),
+                  onPressed: () => Utilities.showURLDialog(
+                      context,
+                      project.parent.url,
+                      "GitHub > " + project.parent.fullName)),
             ]);
 
-          if (project.archived || project.fork) widgets.add(Spacer(flex: 100));
+          if (project.archived || (project.fork && project.parent != null))
+            widgets.add(Spacer(flex: 100));
 
           return Row(children: widgets);
         }),
